@@ -20,6 +20,11 @@ function div(a , b){
 // add(1,3);
 
 //With the help of "module.exports" functionality we could easily use the function which have been defined in this file into some another file as well.
+
+// Module.exports is a object provided by Node.js by which you can export your function in key value pair
+
+// you will use your function with the keys you have assigned to them
+
 // This should be in the key value pair
 module.exports={
     addition: add,
