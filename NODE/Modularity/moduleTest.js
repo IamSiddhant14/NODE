@@ -1,4 +1,4 @@
-const calculatorModule = require('./calculator');
+const calculatorModule = require('./calculator');//Imported the module
 
 calculatorModule.division(20,5);
 calculatorModule.addition(20,5);
