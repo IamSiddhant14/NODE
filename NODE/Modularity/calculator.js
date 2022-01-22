@@ -32,3 +32,4 @@ module.exports={
     Multiply: product,
     division: div
 }
+
