@@ -18,3 +18,4 @@ let output = cp.execSync('node test.js');
 
 console.log( 'output ->' + output);//WHen data is returned in the format of binary then we perfome conatenation to convert it into normal text
 console.log( 'output ->', output);//This wont work here and would result in unwated output
+
