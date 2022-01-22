@@ -1,4 +1,6 @@
-const figlet = require('figlet');//Frist do "npm install figlet "then after that ,Imported figlet
+// npm init to initalize the new node project
+//Frist do "npm install figlet "then after that ,Imported figlet
+const figlet = require('figlet');
 
 figlet('Node js is love', function(err, data) {
     if (err) {
@@ -8,3 +10,4 @@ figlet('Node js is love', function(err, data) {
     }
     console.log(data)
 });
+
