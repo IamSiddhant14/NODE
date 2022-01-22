@@ -1,17 +1,10 @@
- 
-
-
-
-
-
-
-// ****************************** PATH MODULE **************************
-const fs= require('fs');
+ // ****************************** PATH MODULE **************************
+const fs = require('fs');
 const path = require('path');
+//Here in this path " \\ " is required
+let srcFilePath = 'C:\\Users\\Acer\\Desktop\\NODE\\NODE\\myDirectory\\f1.txt';
 
-let srcFilePath = 'C:\\Users\\Acer\\Desktop\\PROJECTS\\PEPCODING-DEV\\JAVASCRIPT\\Node\\myDirectory\\f1.txt';
-
-let destinationPath = 'C:\\Users\\Acer\\Desktop\\PROJECTS\\PEPCODING-DEV\\JAVASCRIPT\\Node\\myDirectory2';//Destination folder path
+let destinationPath = 'C:\\Users\\Acer\\Desktop\\NODE\\NODE\\myDirectory2';//Destination folder path
 
 let tobecopiedFileName =  path.basename(srcFilePath);
 console.log(tobecopiedFileName);//Output is the name of the source file
