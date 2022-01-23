@@ -7,9 +7,7 @@ const fs = require('fs')
 
 const path = require('path')
 
-
 //1. we will be reading writing updating and deleting files
-
 
  let content = fs.readFileSync('f1.txt')
  console.log("this is F1 data -> "+ content)
@@ -19,6 +17,7 @@ const path = require('path')
 //writeFileSync
 // if the file name that is passed doesnt not exists the a new file will be created with its
 //name and the data will be written on that file
+
 fs.writeFileSync('f1.txt', 'This data will be written on F2')
 
 fs.writeFileSync('f3.txt' , 'This data will be written on F3')
@@ -74,9 +73,12 @@ console.log('Data written')
 
  
  // ****************************** PATH MODULE **************************
+
 // const fs = require('fs');
 // const path = require('path');
+
 //Here in this path " \\ " is required
+
 let srcFilePath = 'C:\\Users\\Acer\\Desktop\\NODE\\NODE\\myDirectory\\f1.txt';
 
 let destinationPath = 'C:\\Users\\Acer\\Desktop\\NODE\\NODE\\myDirectory2';//Destination folder path
