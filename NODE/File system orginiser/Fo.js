@@ -29,6 +29,7 @@ let inputArr = process.argv.slice(2);
 // let input = process.argv[2]
 
 
+
 //This will only give us the second index of the character that is -- Siddhant
 console.log(inputArr)
 
@@ -95,7 +96,10 @@ function organizeFn(dirpath){//input of a directory path
 
 //We are writting this function to categories outr files
 function organizeHelper(src , dest){
+
+    //Name of files and folder inside the src
     let childNames = fs.readdirSync(src)
+
     // console.log(childNames)
 
     for( let i =0; i< childNames.length ; i++){
@@ -108,13 +112,17 @@ function organizeHelper(src , dest){
         // console.log(isFile)
 
         if( isFile == true){
-            let fileCategory = getCategory(childAddress[i]);
-            
+            let fileCategory = getCategory(childNames[i]);
         }
 
     }
 }
- 
+
+function getCategory(name){
+    let ext = path.extname(name)
+    ext = ext.slice(1)
+    console.log(ext)
+}
 
 
 
