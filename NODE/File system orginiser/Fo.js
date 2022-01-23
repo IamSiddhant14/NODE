@@ -171,8 +171,3 @@ function sendFiles(srcFilePath , dest , fileCategory ){
     fs.copyFileSync(srcFilePath,destFilePath)
 
 }
-
-
-
-
-
