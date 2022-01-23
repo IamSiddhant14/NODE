@@ -89,7 +89,32 @@ function organizeFn(dirpath){//input of a directory path
             console.log('Please entre a valid path')
         }
     }
+
+    organizeHelper(dirpath, destPath)
 }
+
+//We are writting this function to categories outr files
+function organizeHelper(src , dest){
+    let childNames = fs.readdirSync(src)
+    // console.log(childNames)
+
+    for( let i =0; i< childNames.length ; i++){
+
+        let childAddress = path.join(src , childNames[i])
+        // console.log(childAddress)
+
+        //Determing whther its a file or a directory
+        let isFile = fs.lstatSync(childAddress).isFile()
+        // console.log(isFile)
+
+        if( isFile == true){
+            let fileCategory = getCategory(childAddress[i]);
+            
+        }
+
+    }
+}
+ 
 
 
 
