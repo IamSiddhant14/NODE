@@ -29,9 +29,23 @@ let inputArr = process.argv.slice(2);
 // let input = process.argv[2]
 
 
+let types = {
+    media: ["mp4", "mkv", "mp3"],
+    
+    archives: ["zip", "7z", "rar", "tar", "gz", "ar", "iso", "xz"],
+    
+    documents: ["docx","doc","pdf","xlsx","xls","odt","ods",
+    "odp","odg","odf","txt","ps","tex","html"],
+    
+    app: ["exe", "dmg", "pkg", "deb"],
+
+    image:["png","jpg"]
+    
+};
+
 
 //This will only give us the second index of the character that is -- Siddhant
-console.log(inputArr)
+// console.log(inputArr)
 
 let command = inputArr[0]
 
@@ -75,7 +89,7 @@ function organizeFn(dirpath){//input of a directory path
         return;
     }else{
         let doesExist = fs.existsSync(dirpath)
-        console.log(doesExist)
+        // console.log(doesExist)
 
         if(doesExist == true){
             destPath = path.join(dirpath ,"organized_files")
@@ -113,6 +127,9 @@ function organizeHelper(src , dest){
 
         if( isFile == true){
             let fileCategory = getCategory(childNames[i]);
+            // console.log("------ "+childNames[i]+" ----- "+ " belongs to " +" ---- "+fileCategory)
+
+            sendFiles(childAddress, dest , fileCategory)
         }
 
     }
@@ -120,9 +137,42 @@ function organizeHelper(src , dest){
 
 function getCategory(name){
     let ext = path.extname(name)
+    //Used to eleminate the dot in front of the extension name
     ext = ext.slice(1)
-    console.log(ext)
+    // console.log(ext)
+
+    for( let key in types){
+        let cTypeArr = types[key]
+
+        for(let i =0; i<cTypeArr.length ; i++){
+            if( ext == cTypeArr[i]){
+                //We match the extension with the values present in cTypeArr
+
+                return key
+            }
+
+        }
+    }
+
 }
+
+function sendFiles(srcFilePath , dest , fileCategory ){
+    let catPath = path.join(dest , fileCategory)
+
+    if( fs.existsSync(catPath) == false){
+
+        fs.mkdirSync(catPath)
+
+    }
+
+    let fileName = path.basename(srcFilePath);
+    let destFilePath = path.join(catPath , fileName)
+
+    fs.copyFileSync(srcFilePath,destFilePath)
+
+}
+
+
 
 
 
